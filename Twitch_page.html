@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
   <link href="https://fonts.googleapis.com/css?family=Bubbler+One" rel="stylesheet">
 
@@ -15,7 +16,7 @@
 
 <body>
     <br /><br />
-    <div class="container" style="width:700px ; height: 600px ; background-color: #E1BEE7 ;">
+    <div class="container" style="width:700px ; min-height: 900px; height: auto ; background-color: #E1BEE7 ;">
       <div class="container row" style="background-color: black; width: 700px">
         <div class="navbar-header col-xs-7">
           <a class="navbar-brand" style="font-size: 35px; font-family: 'Bubbler One', sans-serif; color: white">
@@ -24,14 +25,27 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse row col-xs-5">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#all" style="color: #CFD8DC">ALL</a></li>
-            <li class="active"><a href="#online" style="color: #CFD8DC">ONLINE</a></li>
-            <li class="active"><a href="#offline" style="color: #CFD8DC">OFFLINE</a></li>
+            <li class="active"><a href="#all" style="color: #CFD8DC" onclick="getAllUsers()">ALL</a></li>
+            <li class="active"><a href="#all" style="color: #CFD8DC" onClick="getOnlineUsers()">ONLINE</a></li>
+            <li class="active"><a href="#all" style="color: #CFD8DC" onclick="getOfflineUsers()">OFFLINE</a></li>
           </ul>
         </div>
       </div>
-      <div class="container row" style="background-color: #BA68C8; width: 700px; height: 6px;" id="info"> 
+      <div class="container row" style="background-color: #BA68C8; width: 700px; height: 6px;">
+        <br /><br />
+        <div  id="info">
+          <ul class="w3-ul w3-card-4" style="width:100%">
+            <div id="online">
+            </div>
+          </ul>
+          <br />
+          <ul class="w3-ul w3-card-4" style="width:100%">
+            <div id="offline">
 
+            </div>
+          </ul>
+
+        </div>
       </div>
     </div>
 
