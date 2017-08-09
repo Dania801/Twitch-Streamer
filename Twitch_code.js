@@ -55,14 +55,13 @@ function getOfflineStreamers(streamer){
 }
 
 function getChannelInfo(data){
-
   var name = data.display_name ;
   var game = data.game ;
   var status = data.status ;
   var url = data.url ;
   var views = data.views ;
   var followers = data.followers ;
-  var logo = data.logo ;
+  var logo = data.logo ? data.logo : "twitch_profile.png";
   var lang = data.broadcaster_language ;
   offline.innerHTML += '<li class="w3-padding-16 w3-red w3-animate-right">'+
                     '<img src="'+logo+'" class="w3-left w3-circle w3-margin-right" style="width:50px"/>'+
@@ -73,8 +72,6 @@ function getChannelInfo(data){
 
 function getStreamerInfo(data , streamer)
 {
-
-
   if(data.stream != null) {
     var name = data.stream.channel.display_name ;
     var game = data.stream.channel.game ;
@@ -82,7 +79,7 @@ function getStreamerInfo(data , streamer)
     var url = data.stream.channel.url ;
     var views = data.stream.channel.views ;
     var followers = data.stream.channel.followers ;
-    var logo = data.stream.channel.logo ;
+    var logo = data.stream.channel.logo ? data.stream.channel.logo : "twitch_profile.png";
     var lang = data.stream.channel.broadcaster_language ;
     online.innerHTML += '<li class="w3-padding-16 w3-green w3-animate-left">'+
                       '<img src="'+logo+'" class="w3-left w3-circle w3-margin-right" style="width:50px"/>'+
@@ -90,7 +87,6 @@ function getStreamerInfo(data , streamer)
                       '<span>'+game+'</span>'+
                       '</li>'
   }
-
 }
 
 function getAllUsers(){
